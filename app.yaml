@@ -1,0 +1,43 @@
+application: frontend-slides
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+ - url: /css
+   static_dir: css
+
+ - url: /fonts
+   static_dir: fonts
+
+ - url: /images
+   static_dir: images
+
+ - url: /js
+   static_dir: js
+
+ - url: /lib
+   static_dir: lib
+
+ - url: /plugin
+   static_dir: plugin
+
+ - url: /
+   script: main.app
+
+ - url: /summernote.html
+   script: main.app
+
+ - url: /map.html
+   script: main.app
+
+ - url: /api/addDetective/
+   script: main.app
+
+libraries:
+ - name: webapp2
+   version: latest
+
+ - name: jinja2
+   version: latest

@@ -1,0 +1,1254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Frontend</title>
+
+    <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+    <meta name="author" content="Hakim El Hattab">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/toastr.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/basic.css">
+    <link rel="stylesheet" href="css/dropzone.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+        <section data-background="#810541">
+            <h1>Web Frontend</h1>
+            <h3><a href="http://bit.ly/adprog" target="_blank" style="color: white;">Advanced Programming Tools</a></h3>
+            <h3 style="margin-top: 30px;"><a href="http://nimadini.net" style="color: white;" target="_blank">Nima Dini</a></h3>
+
+            <!--<h5> Javascript section is adapted from <a href="http://js.saboury.net/" target="_blank">Amir Saboury</a> </h5> -->
+
+             <p style="font-size: xx-large; margin-top: 40px;">
+                <small>Powered by <a href="https://github.com/hakimel/reveal.js" target="_blank">Reveal.js</a></small>
+            </p>
+        </section>
+
+        {% include 'agenda.html' %}
+
+        <section data-transition="slide" data-background="#CC6633">
+            <h2 style="margin-bottom: 40px;">3 Components</h2>
+            <div style="font-size: 30px;">
+                <p>
+                    HyperText Markup Language (HTML) <i style="font-size: 27px;" class="fa fa-arrow-right"></i> structure and content
+                </p>
+                <p>
+                    Cascading Style Sheets (CSS)  <i style="font-size: 27px;" class="fa fa-arrow-right"></i> look and formatting
+                </p>
+                <p>
+                    JavaScript  <i style="font-size: 27px;" class="fa fa-arrow-right"></i> programmatic controls
+                </p>
+            </div>
+        </section>
+
+        <section data-transition="slide" data-background="#CC6633">
+            <h2 style="margin-bottom: 40px;">Example</h2>
+            <div>
+               <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head lang="en"&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="author" content="Nima Dini"&gt;
+    &lt;title&gt; Web Frontend &lt;/title&gt;
+
+    <!-- include css files -->
+    &lt;link href="../css/style.css" rel="stylesheet"&gt;
+
+    <!-- include head js files -->
+    &lt;script src="../js/main.js" type="text/javascript"&gt;&lt;/script&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt; <!-- Main Content Goes Here! --> &lt;/body&gt;
+
+  <!-- include ending js files -->
+&lt;/html&gt;</code></pre>
+            </div>
+        </section>
+
+        <section data-transition="slide" data-background="#CC6633">
+            <h2 style="margin-bottom: 40px;">Keep the 3 components separate!</h2>
+            <div style="font-size: 30px;">
+                <div class="row">
+                    <div class="col-xs-9">
+                        <pre><code>  <div style="color: black; font-size: small;">Hello!</div></code></pre>
+                    </div>
+                    <div class="col-xs-3">
+                        <i class="fa fa-arrow-right" style="margin-top: 18px;"></i> <span style="font-weight: bold;">BAD (inline)</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-9">
+                        <pre><code>  <!-- HTML -->
+  <div class="custom-class"></div>
+
+  <!-- CSS -->
+  .custom-class {
+    color: black;
+    font-size: small;
+  }</code></pre>
+                    </div>
+                    <div class="col-xs-3">
+                        <i class="fa fa-arrow-right" style="margin-top: 90px;"></i> <span style="font-weight: bold;">GOOD</span>
+                    </div>
+                </div>
+
+            </div>
+            <a href="http://www.mezzoblue.com/zengarden/alldesigns/" target="_blank" style="font-size: 24px;"> Same HTML, different styling with CSS </a>
+
+        </section>
+
+        {% include 'agenda.html' %}
+
+        <section data-transition="slide" data-background="#333366">
+            <h2><a href="http://getbootstrap.com/" target="_blank" style="color: white;">Bootstrap</a></h2>
+            <p>
+                HTML, CSS, and JS framework to develop responsive apps
+            </p>
+        </section>
+
+        <section data-background="#333366">
+            <h2>Understand the <a href="http://getbootstrap.com/css/#grid" target="_blank">Grid System</a></h2>
+            <div style="font-size: 28px; background-color: brown;" class="bootstrap-tiles">
+                <div class="row">
+                    <div class="col-xs-1" style="background-color: #4d7e65">1</div>
+                    <div class="col-xs-1">1</div>
+                    <div class="col-xs-1" style="background-color: #4d7e65">1</div>
+                    <div class="col-xs-1">1</div>
+                    <div class="col-xs-1" style="background-color: #4d7e65">1</div>
+                    <div class="col-xs-1">1</div>
+                    <div class="col-xs-1" style="background-color: #4d7e65">1</div>
+                    <div class="col-xs-1">1</div>
+                    <div class="col-xs-1" style="background-color: #4d7e65">1</div>
+                    <div class="col-xs-1">1</div>
+                    <div class="col-xs-1" style="background-color: #4d7e65">1</div>
+                    <div class="col-xs-1">1</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-8" style="background-color: #7B68EE;">8</div>
+                    <div class="col-xs-4" style="background-color: #2F4F4F;">4</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-4">4</div>
+                    <div class="col-xs-4" style="background-color: #4682B4;">4</div>
+                    <div class="col-xs-4">4</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-2">2</div>
+                    <div class="col-xs-2" style="background-color: #FFA500;">2</div>
+                    <div class="col-xs-2">2</div>
+                    <div class="col-xs-2" style="background-color: #FFA500;">2</div>
+                    <div class="col-xs-2">2</div>
+                    <div class="col-xs-2" style="background-color: #FFA500;">2</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12" style="background-color: #449d44">12</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6" style="background-color: #6a1521">6</div>
+                    <div class="col-xs-6">6</div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-1" style="background-color: #1a54a1">1</div>
+                    <div class="col-xs-2">2</div>
+                    <div class="col-xs-3" style="background-color: #2b542c">3</div>
+                    <div class="col-xs-4" style="background-color: #7B68EE">4</div>
+                    <div class="col-xs-2" style="background-color: #2e6da4">2</div>
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#333366">
+            <h2>Other Components</h2>
+            <div class="row">
+                <div class="col-xs-3">
+                    <span style="font-size: 21px;">table</span>
+                    <hr style="margin-top: -4px;">
+                    <table class="table table-hover" style="font-size: 19px;">
+                        <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                        </tr>
+                        <tr>
+                            <td>Mary</td>
+                            <td>Moe</td>
+                        </tr>
+                        <tr>
+                            <td>July</td>
+                            <td>Dooley</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-xs-3">
+                    <span style="font-size: 21px;">buttons</span>
+                    <hr style="margin-top: -4px; margin-left: 12px;">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-success">Action</button>
+                        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-danger">Action</button>
+                        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="caret"></span>
+                            <span class="sr-only">Toggle Dropdown</span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                        </ul>
+                    </div>
+                    <nav style="margin-left: 12px;">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-xs-6">
+                    <span style="font-size: 21px;">panels</span>
+                    <hr style="margin-top: -4px; margin-left: 12px;">
+
+                    <div class="panel panel-info" style="color: #000000; font-size: 21px;">
+                        <div class="panel-heading" style="font-weight: bold; font-size: 24px; padding-top: 4px; padding-bottom: 4px;"> Heading </div>
+                        <div class="panel-body">
+                            <img src="images/5.jpg" height="100">
+                            <img src="images/4.jpg" height="100">
+                            <img src="images/2.jpg" height="100">
+                        </div>
+                        <div class="panel-footer panel-info" style="height: 28px; font-size: 17px; color: slategray">
+                            <div class="pull-left" style="padding-top: 3px; padding-left: 3px;">
+                                <i class="fa fa-map-marker"></i> Austin, TX
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="font-size: 18px; margin-top: 30px;"> check more components <a href="http://getbootstrap.com/components/" target="_blank">here</a></div>
+            <div style="font-size: 18px; margin-top: 30px;"> learn how to use sticky top
+                <a href="http://getbootstrap.com/examples/navbar-fixed-top/" target="_blank">navbar</a>, footer,
+                <a href="http://getbootstrap.com/javascript/#modals" target="_blank">modal</a>,
+                <a href="http://getbootstrap.com/javascript/#affix" target="_blank">affix</a>, etc. </div>
+        </section>
+
+        {% include 'agenda.html' %}
+
+        <section data-transition="slide" data-background="#660033">
+            <h2>Javascript</h2>
+            <p>
+                Adapted from <a href="http://amir.saboury.net/" target="_blank">Amir Saboury</a>'s <a href="http://js.saboury.net/" target="_blank">JS Slides</a>
+            </p>
+        </section>
+
+        <section data-transition="slide" data-background="#660033">
+            <h2>Javascript</h2>
+            <p>
+                Java and Javascript are similar like Car and Carpet are similar!
+            </p>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Javascript</h2>
+            <p>
+                <sup><i class="fa fa-quote-left"></i></sup> Learning Javascript used to mean you weren't a serious software developer. Today, not learning Javascript means the same thing! <sub><i class="fa fa-quote-right"></i></sub>
+            </p>
+            <div style="font-size: 20px;">— Tim O'Reilly</div>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Hello World!</h2>
+                <pre><code>&lt;script&gt;
+    alert('Hello World!');
+&lt;/script&gt;</code></pre>
+            Or just keep it in a separate file
+            <pre><code>&lt;script src="myScript.js"&gt;&lt;/script&gt;</code></pre>
+        </section>
+
+        <section data-background="#660033">
+            <h2>var</h2>
+            <pre><code>var x=5;
+var y=6;
+var z=x+y;</code></pre>
+
+        </section>
+
+        <section data-background="#660033">
+            <h2>console.log</h2>
+            <pre><code>var msg = 'Some random message';
+console.log(x); // turn on browser's javascript console</code></pre>
+            <p> is your friend! </p>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Types</h2>
+            <div style="font-size: 28px;">
+                <p>numbers</p>
+                <p>strings</p>
+                <p>booleans</p>
+                <p>undefined</p>
+            </div>
+            <p style="margin-top: 50px; font-size: x-large;">All other values are objects.</p>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Null vs. Undefined</h2>
+            <pre><code>console.log(x); // ReferenceError: x is not defined
+console.log(typeof x); // undefined
+
+var y = null;
+console.log(y); // null
+console.log(typeof y); // object</code></pre>
+        </section>
+
+        <section data-background="#660033">
+            <h2>'===' <span style="font-size: 50px;">==</span> '==' ? </h2>
+            <pre><code>var x = 2;
+
+var y = "2";
+if (x == y) {
+    alert("==");
+}
+if (x === y) {
+    alert("===");
+}</code></pre>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Array</h2>
+            <pre><code>var list = new Array();
+list[0] = "something";
+list[1] = "nothing";
+list[2] = "everything";
+//
+var list = Array("something", "nothing", "everything");
+//
+var list = ["something", "nothing", "everything"];</code></pre>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Object</h2>
+            <p style="margin-bottom: 30px;">Dynamic Dictionary</p>
+
+            <p style="font-size: 27px;">Arrays, functions, regular expressions, and of course, objects are objects.</p>
+            <p style="font-size: 27px;">Objects can contain other objects.</p>
+        </section>
+
+                <section data-background="#660033">
+            <h2>Example</h2>
+            <pre><code>var newObject = new Object();
+var empty_object = {};
+
+var flight = {
+        airline: "Oceanic",
+        number: 815,
+        departure: {
+            IATA: "SYD", time: "2004-09-22 14:55", city: "Sydney"
+        },
+        arrival: {
+            IATA: "LAX",
+            time: "2004-09-23 10:42",
+            city: "Los Angeles"
+        }
+    };</code></pre>
+        </section>
+
+
+          <section data-background="#660033">
+            <h2>References</h2>
+            <p style="font-size: 28px;">
+                Objects are passed around by reference.
+They are never copied!
+            </p>
+
+              <pre><code>a = {}, b = {}, c = {};
+// a, b, and c each refer to a different empty object
+
+a = b = c = {};
+// a, b, and c all refer to the same empty object</code></pre>
+
+              <pre><code>var student = {first:'Peter', last:'Griffin'};
+
+// I'm now Peter!
+
+changeName(student);
+
+// I'm now Chris!
+
+function changeName(st) {
+    st.first = 'Chris';
+}</code></pre>
+
+
+        </section>
+
+
+        <section data-background="#660033">
+            <h2>Functions</h2>
+            <pre><code>function func(arg1, arg2) {
+    // some code to be executed
+}</code></pre>
+            <p>
+                Functions in Javascript are awesome!
+            </p>
+            <p>
+                Why?
+            </p>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Function</h2>
+            <p>
+                can be stored in variables, objects, and arrays! <br/>
+                can be passed as arguments to functions!<br/>
+                can be returned from functions!<br/>
+                can have methods and properties!<br/>
+            </p>
+        </section>
+
+         <section data-background="#660033">
+            <h2>this Keyword</h2>
+            <pre><code>function f() { // in global scope
+    console.log(this);
+}
+
+f(); // Window
+
+var obj = {
+    myFunction: f
+}
+
+obj.myFunction(); //obj
+
+var Person = function(name){
+    this.name = name;
+}
+var p = new Person("Joe"); // this:: the new Person instance</code></pre>
+        </section>
+
+        <section data-background="#660033">
+            <h2>Naming conventions?</h2>
+            <p>
+                Stick to one convention consistently, like Always <i>camelCase</i>
+            </p>
+
+            <p>
+                <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a>
+            </p>
+        </section>
+
+
+        {% include 'agenda.html' %}
+
+        <section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+            <h2>jQuery</h2>
+            <p>
+                a fast, small, and feature-rich Javascript library.
+            </p>
+            <p>
+                Write less, do more!
+            </p>
+        </section>
+
+        <section data-background="#4d7e65">
+            <h2>jQuery Basics</h2>
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="panel panel-default" style="background-color: transparent; border: 2px solid darkblue;">
+                        <div class="panel-body">
+                            A + B = <span id="sum"> </span>
+                            <div>
+                                <input id="a" type="text" placeholder="A" style="color: #000000; margin-bottom: 15px; width: 150px;"><br>
+                            </div>
+                            <div>
+                                <input id="b" type="text" placeholder="B" style="color: #000000;  margin-bottom: 15px; width: 150px;"><br>
+                            </div>
+                            <button id="sum-btn" class="btn btn-primary btn-lg" style="margin-bottom: 15px;"> Calculate </button>
+                            <div style="font-size: 18px; color: black; font-weight: bold;">
+                                Live Demo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-9">
+                    <pre><code><!-- HTML -->
+A + B = <span id="sum"> <!-- Result--> </span>
+
+<input id="a" type="text" placeholder="A">
+<input id="b" type="text" placeholder="B">
+
+<button id="sum-btn"> Calculate </button></code></pre>
+                    <pre><code>// javascript (jQuery)
+$('#sum-btn').on('click', function() {
+    // get elems by ID (#) and read their values
+    var a = $('#a').val();
+    var b = $('#b').val();
+
+    var res = parseInt(a) + parseInt(b); // sum
+    $('#sum').text(res); // update sum (GUI)
+});</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4d7e65">
+            <h2>jQuery Basics</h2>
+            <div class="row" style="font-size: 22px;">
+                <div class="col-xs-4">
+                    <div class="panel panel-default" style="background-color: transparent; border: 2px solid darkblue; padding-top: 8px;">
+                        <div class="panel-body">
+                            <div class="person col-xs-6"> Nucky </div>
+                            <div class="person col-xs-6"> Eli </div>
+                            <div class="person col-xs-6"> Chalky </div>
+                            <div class="person col-xs-6"> Margaret </div>
+                            <div class="person col-xs-6"> Jimmy </div>
+                            <div class="person col-xs-6"> Al </div>
+                            <div class="person col-xs-6"> Mickey </div>
+                            <div class="person col-xs-6"> Gillian </div>
+                            <div class="person col-xs-6"> Arnold </div>
+                            <div class="person col-xs-6"> Nelson </div>
+                            <div class="person col-xs-6"> Lucky </div>
+                            <div class="person col-xs-6"> Richard </div>
+                            <div class="person col-xs-6"> Commodore </div>
+                            <div class="person col-xs-6"> Meyer </div>
+                            <input id="search-field" placeholder="Search" type="text" style="margin-top: 20px; color: black; margin-bottom: 15px;">
+                        </div>
+                        <div style="font-size: 18px; color: black; font-weight: bold;">
+                            Live Demo
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-8" style="font-size: 27px;">
+                    <pre><code>var $searchField = $('#search-field');
+
+// timer for performing instant search
+var typingTimer;
+var doneTypingInterval = 300; // timeout for new in-page search
+
+//on keyup, start the countdown
+$searchField.keyup(function() {
+  clearTimeout(typingTimer);
+  typingTimer = setTimeout(inPageSearch, doneTypingInterval);
+});
+
+//on keydown, clear the countdown
+$searchField.keydown(function() {
+  clearTimeout(typingTimer);
+});
+
+function addHidingClass($div) {
+  if (!$div.hasClass('hiding-class')) {
+    $div.addClass('hiding-class');
+  }
+}
+
+function removeHidingClass($div) {
+  $div.removeClass('hiding-class');
+}
+
+function inPageSearch() {
+  var searchQuery = $searchField.val().trim().toLowerCase();
+
+  $('.person').each(function() {
+    var testQuery = $(this).text().trim().toLowerCase();
+    if (testQuery.match(searchQuery) == null) {
+      addHidingClass($(this));
+    }
+    else {
+      removeHidingClass($(this));
+    }
+  });
+}</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section data-background="#4d7e65">
+            <h2>Animation with jQuery</h2>
+            <div class="row" style="margin-top: 50px; margin-bottom: 140px;">
+                <div id="mustang" style="left: 0; position: absolute;">
+                    <img style="border: none; background-color: #4d7e65;" src="images/mustang.png" width="190">
+                </div>
+            </div>
+            <div class="row">
+                <div id="camaro" style="left: 0; position: absolute;">
+                    <img style="border: none; background-color: #4d7e65;" src="images/camaro.png" width="200">
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 160px; margin-bottom: 50px;">
+                <button class="btn btn-lg btn-default" id="reset-btn"> reset </button>
+                <button class="btn btn-lg btn-danger" id="animate-btn"> start </button>
+            </div>
+
+            <p style="font-size: 21px;"> Check more <a href="https://jqueryui.com/easing/" target="_blank">easing</a> options</p>
+        </section>
+
+        <section data-background="#4d7e65">
+            <h2>jQuery AJAX</h2>
+            <p>Asynchronous JavaScript and XML</p>
+            <pre style="font-size: 18px;"><code>  var detective = { name: 'Sherlock Holmes' }; // a javascript object
+
+  $.ajax({
+      type: 'POST',                            // http method
+      url: '/api/addDetective/',               // target URL
+      data: detective,                         // data (the js obj)
+      success: function(serverResp) {                 // on ajax success
+          if (serverResp.code == '200') {
+              console.log('detective added successfully!');
+          }
+          else {
+              console.log('detective already exists!');
+          }
+      },
+      error: function(serverResp) {                   // on ajax failure
+          console.log('5xx http status code or unexpected response content');
+      }
+  });</code></pre>
+
+            <button id="ajax-example-btn" class="btn btn-lg btn-default">Send</button>
+        </section>
+
+        <section data-background="#4d7e65">
+            <h2> Asynchronous JAX</h2>
+            <p></p>
+            <pre style="font-size: 18px;"><code>  $.ajax({...}); // 1
+  $.ajax({...}); // 2
+  $.ajax({...}); // 3</code></pre>
+
+            which one ends first?
+        </section>
+
+        <section data-background="#4d7e65">
+            <h2>jQuery AJAX</h2>
+            <p>
+                <a href="http://api.jquery.com/jquery.ajax/" target="_blank"> Read More </a>
+                <pre style="font-size: 18px;"><code>beforeSend: function() {
+    // will be triggered before send
+}  </code></pre>
+                <pre style="font-size: 18px;"><code>complete: function(serverResp) {
+    // will be triggered when the req finishes, regardless of success/failure
+}  </code></pre>
+            <pre style="font-size: 18px;"><code>async: false // synchronous ajax :O (by default: true)</code></pre>
+
+            Watch these Youtube videos: <a href="https://www.youtube.com/watch?v=fEYx8dQr_cQ" target="_blank">1</a>,
+            <a href="https://www.youtube.com/watch?v=5nL7X1UMWsc" target="_blank">2</a>,
+            <a href="https://www.youtube.com/watch?v=GbNWPn8vodo" target="_blank">3</a>
+            </p>
+        </section>
+
+        {% include 'agenda.html' %}
+
+        <section data-background="#336633">
+            <h2><a href="https://jqueryui.com/" target="_blank" style="color: white;">jQuery UI</a></h2>
+            UI interactions, effects, widgets, and themes built on top of jQuery
+        </section>
+
+        <section data-background="#336633">
+            <h2><a href="https://jqueryui.com/" target="_blank" style="color: white;">jQuery UI</a></h2>
+            Useful features to look at:
+            <div style="font-size: 28px;">
+                <p><a href="https://jqueryui.com/draggable/" target="_blank">Draggable</a></p>
+                <p><a href="https://jqueryui.com/resizable/" target="_blank">Resizable</a></p>
+                <p><a href="https://jqueryui.com/selectable/" target="_blank">Selectable</a></p>
+                <p><a href="https://jqueryui.com/sortable/" target="_blank">Sortable</a></p>
+                <p><a href="https://jqueryui.com/progressbar/" target="_blank">Progressbar</a></p>
+            </div>
+        </section>
+
+        {% include 'agenda.html' %}
+
+        <section data-transition="slide" data-background="#4682B4">
+            <h2><a href="https://fortawesome.github.io/Font-Awesome/icons/" style="color: white" target="_blank">Font Awesome</a></h2>
+            <p>Scalable vector icons that can instantly be customized</p>
+            <p class="row">
+                <i class="fa fa-user col-xs-1"></i>
+                <i class="fa fa-plus col-xs-1"></i>
+                <i class="fa fa-check col-xs-1"></i>
+                <i class="fa fa-camera col-xs-1"></i>
+                <i class="fa fa-refresh col-xs-1"></i>
+                <i class="fa fa-car col-xs-1"></i>
+                <i class="fa fa-calculator col-xs-1"></i>
+                <i class="fa fa-gamepad col-xs-1"></i>
+                <i class="fa fa-spoon col-xs-1"></i>
+                <i class="fa fa-bank col-xs-1"></i>
+                <i class="fa fa-question col-xs-1"></i>
+                <i class="fa fa-key col-xs-1"></i>
+            </p>
+        </section>
+
+        <section data-background="#4682B4">
+            <h2><a href="https://fortawesome.github.io/Font-Awesome/icons/" style="color: white" target="_blank">Font Awesome</a> (Example)</h2>
+            <div class="row">
+                <div class="col-xs-10">
+                    <pre style="font-size: 18px;"><code> <i class="fa fa-thumbs-up"></i></code></pre>
+                </div>
+                <div class="col-xs-2" style="margin-top: 10px;">
+                    <i class="fa fa-thumbs-up"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-10">
+                    <pre style="font-size: 18px;"><code> <i class="fa fa-thumbs-up" style="color: yellowgreen;"></i></code></pre>
+                </div>
+                <div class="col-xs-2" style="margin-top: 10px;">
+                    <i class="fa fa-thumbs-up" style="color: yellowgreen;"></i>
+                </div>
+            </div>
+
+            <div class="row" style="margin-top: 14px;">
+                <div class="col-xs-10">
+                    <pre style="font-size: 18px;"><code> <i class="fa fa-2x fa-thumbs-up"></i></code></pre>
+                </div>
+                <div class="col-xs-2" style="margin-top: -14px;">
+                    <i class="fa fa-2x fa-thumbs-up"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-10">
+                    <pre style="font-size: 18px;"><code> <i class="fa fa-thumbs-up fa-spin"></i></code></pre>
+                </div>
+                <div class="col-xs-2" style="margin-top: 12px;">
+                    <i class="fa fa-thumbs-up fa-spin"></i>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-10">
+                    <pre style="font-size: 18px;"><code> <i class="fa fa-thumbs-up fa-rotate-180"></i></code></pre>
+                </div>
+                <div class="col-xs-2" style="margin-top: 10px;">
+                    <i class="fa fa-thumbs-up fa-rotate-180"></i>
+                </div>
+            </div>
+
+        </section>
+
+        <section data-transition="slide" data-background="#b5533c">
+            <h2><a href="http://lokeshdhakar.com/projects/lightbox2/" target="_blank" style="color: white;">Lightbox</a></h2>
+            <div class="row">
+                <a href="images/1.jpg" data-lightbox="roadtrip" style="float: left;">
+                    <div class="img_item" style="cursor: pointer;">
+                        <img src="images/1.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                    </div>
+                </a>
+                <a href="images/2.jpg" data-lightbox="roadtrip" style="float: left;">
+                    <div class="img_item" style="cursor: pointer;">
+                        <img src="images/2.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                    </div>
+                </a>
+                <a href="images/3.jpg" data-lightbox="roadtrip" style="float: left;">
+                    <div class="img_item" style="cursor: pointer;">
+                        <img src="images/3.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section data-transition="slide" data-background="#EB9100">
+            <h2><a href="http://packery.metafizzy.co/" target="_blank" style="color: white;">Packery</a></h2>
+            <div id="container" class="row">
+                <div class="img_item">
+                    <img src="images/1.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/2.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/3.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/4.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/5.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/6.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/7.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+                <div class="img_item">
+                    <img src="images/8.jpg" class="img-responsive img-rounded im-gal" alt="img">
+                </div>
+            </div>
+        </section>
+
+        <section data-transition="slide" data-background="#F5DEB3">
+                <h2>
+                    <a href="https://github.com/CodeSeven/toastr" target="_blank" style="color: black;">Toastr</a>
+                </h2>
+            <p>
+                a Javascript notification library
+            </p>
+            <div class="row">
+                <button id="btn-info" class="btn btn-lg btn-info">info</button>
+                <button id="btn-success" class="btn btn-lg btn-success">success</button>
+                <button id="btn-warning" class="btn btn-lg btn-warning">warning</button>
+                <button id="btn-danger" class="btn btn-lg btn-danger">error</button>
+            </div>
+            <div class="row" style="font-size: 23px; margin-top: 40px;">
+                Don't use <a id="alert-link" style="cursor: pointer;">alerts</a> for notifications! Use Toastr instead!
+            </div>
+        </section>
+
+
+        <section data-transition="slide" data-background="#B0C4DE">
+            <h2>
+                <a href="http://summernote.org/" target="_blank" style="color: black;">Summernote</a>
+            </h2>
+            <p>
+                Simple text editor on Bootstrap
+            </p>
+            <iframe src="summernote.html" width="900" height="300"></iframe>
+            <p style="font-size: 24px;">a higher user experience (comparing to bare textarea)</p>
+        </section>
+
+        <section data-transition="slide" data-background="#3b5998">
+            <h2>
+                <a href="http://www.dropzonejs.com/" target="_blank" style="color: white;">Dropzone</a>
+            </h2>
+            <p>
+                Drag n drop file uploads with image previews.
+            </p>
+
+            <div class="dropzone dropzone-previews img-responsive" id="my-awesome-dropzone" style="color: dimgray;">
+            </div>
+        </section>
+
+        <section data-transition="slide" data-background="#6666CC">
+            <h3>
+                Dynamic Content Gen. Using AJAX
+            </h3>
+            <p>
+                <strong>Scenario</strong>: you receive a list of donation objects through AJAX and want to inject them into DOM.
+            </p>
+            <pre style="font-size: 20px;"><code>  <!-- Here is one of these objects -->
+
+  var obj = {
+    name: 'Jon',
+    amount: '90'
+  };</code></pre>
+            <p style="font-size: 30px;">
+                Naive approach <i class="fa fa-arrow-right" style="font-size: 25px;"></i> String Concatenation
+            </p>
+<pre style="font-size: 19px;"><code>  <!-- The poor solution (has major maintenance issue) -->
+
+  for (i=0; i < objs.length; i++) {
+    var d = '<p>' + objs[i].name + ' donated $' + objs[i].amount + '</p>';
+    $('#donations-container').append(donation);
+  }</code></pre>
+
+        </section>
+
+        <section data-background="#6666CC">
+            <h2>Can we do better? :/</h2>
+            <p style="margin-bottom: 20px;"> The answer is YES! \m/ Two common tools: </p>
+            <p style="font-size: 32px; margin-left: 20px;"> Mustache.js </p>
+            <p style="font-size: 32px; margin-left: 20px;"> ICanHaz.js </p>
+        </section>
+
+        <section data-background="#6666CC">
+            <h2>
+                {% raw %}
+                    <a href="https://github.com/janl/mustache.js/" style="color: white;" target="_blank">{{ Mustache }}</a>
+                {% endraw %}
+            </h2>
+            <p>
+                a logic-less template syntax
+            </p>
+            <p style="font-size: 30px;">
+                there are no if/else statements or loops. Instead there are only tags
+            </p>
+        </section>
+
+        {% raw %}
+
+        <section data-background="#6666CC">
+
+            <h2>
+                Example
+            </h2>
+            <pre style="font-size: 20px;"><code>var template = '<p>{{ name }} donated ${{ amount }}</p>';
+
+var obj = {
+  name: 'Jon',
+  amount: '90'
+};
+
+var output = Mustache.render(template, obj);</code></pre>
+
+            <pre style="font-size: 20px;"><code><!-- value of output after Mustache.render(...) -->
+'<p>Jon donated $90</p>'</code></pre>
+        </section>
+
+        <section data-background="#6666CC">
+            <h2>
+                <a href="http://icanhazjs.com/" target="_blank" style="color: white;">I Can Haz</a>
+            </h2>
+            <p>
+                client side template language
+            </p>
+            <p style="font-size: 30px;">
+                Why do we need this?
+            </p>
+        </section>
+
+        {% endraw %}
+
+        <section data-background="#6666CC">
+            <h2>
+                Why ICanHaz?
+            </h2>
+            <p>
+                The beauty of Mustache.js fades when we're dealing with multi-line html in the browser
+            </p>
+        </section>
+
+        {% raw %}
+
+        <section data-background="#6666CC">
+            <h2>
+                Example
+            </h2>
+            <pre style="font-size: 20px;"><code>var obj={name: 'Bruce Wayne'};
+var user = ich.foo(obj); // 'foo' must be the same as script's id
+
+// this script should be included in your html page
+&lt;script id="foo" type="text/html"&gt;
+        &lt;p class="name"&gt;I'm {{ name }}&lt;/p&gt;
+&lt;/script&gt;</code></pre>
+        </section>
+
+        {% endraw %}
+
+        <section data-background="#6666CC">
+            <h2>
+                Frontend/Backend Template Conflict?
+            </h2>
+            {% raw %}
+            <p>
+                use escaping mechanism -> <a href="http://jinja.pocoo.org/docs/dev/templates/#list-of-control-structures" target="_blank">{{ raw }} in Jinja2</a>
+            </p>
+            {% endraw %}
+        </section>
+
+        <section data-transition="slide" data-background="#666633">
+            <h2>Google Maps API</h2>
+            <iframe src="map.html" width="900" height="400"></iframe>
+            <p> Overlapping markers? :/ ->
+                <a href="http://jawj.github.io/OverlappingMarkerSpiderfier/demo.html" target="_blank">Spiderfier</a>
+            </p>
+        </section>
+
+         <section data-transition="slide" data-background="#003366">
+            <h2><a href="http://d3js.org/" target="_blank" style="color: white;">Data Driven Documents (D3.js)</a></h2>
+            <p>js library for manipulating documents based on data</p>
+        </section>
+
+        <section data-transition="slide" data-background="#003366">
+            <h2>Examples</h2>
+             <div>
+                 <p><a href="http://bl.ocks.org/rkirsling/5001347" target="_blank">Directed Graph Editor</a></p>
+                 <p><a href="http://bl.ocks.org/mbostock/3057239" target="_blank">Geodesic Rainbow</a></p>
+                 <p><a href="http://bl.ocks.org/mbostock/4063423" target="_blank">Sunburst Partition</a></p>
+                 <p><a href="http://bl.ocks.org/mbostock/4060606" target="_blank">Choropleth</a></p>
+                 <p><a href="http://bl.ocks.org/NPashaP/9994181" target="_blank">3D Donut</a></p>
+                 <p><a href="http://bl.ocks.org/Caged/6476579" target="_blank">Bar Chart</a></p>
+             </div>
+        </section>
+
+        <section data-transition="slide" data-background="#CC6633">
+            <h2><a href="http://getfirebug.com/" target="_blank">Firebug</a></h2>
+            <p>Your Great Friend!</p>
+        </section>
+
+        <section data-background="#810541">
+            <h1 style="font-size: 128px;">Questions?</h1>
+        </section>
+
+        <section data-background="#810541">
+            <h1 style="font-size: 60px;">&lt;/end&gt;</h1>
+        </section>
+    </div>
+    <div style="bottom: 10px; left: 10px; position: absolute; font-size: 15px; font-family: serif; color: #f5f5f5;">
+        <a href="http://nimadini.net" target="_blank" class="custom-link" style="z-index: 10000;">Created by Nima Dini</a>
+    </div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/lightbox.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/packery.pkgd.min.js"></script>
+<script src="js/draggabilly.pkgd.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script src="js/toastr.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/jquery.easing.compatibility.js"></script>
+<script src="js/dropzone.min.js"></script>
+
+<script type="text/javascript">
+    var $container = $('#container');
+    $container.imagesLoaded(function() {
+        $container.packery({
+            gutter: 10,
+            columnWidth: '.img_item',
+            itemSelector: '.img_item'
+        });
+
+        $container.find('.img_item').each(function(i, itemElem) {
+            var draggie = new Draggabilly( itemElem );
+            $container.packery('bindDraggabillyEvents', draggie);
+        });
+    });
+
+    toastr.options = {
+        "closeButton": false,
+        "debug": false,
+        "newestOnTop": false,
+        "progressBar": false,
+        "positionClass": "toast-bottom-left",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "5000",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
+    $('#btn-info').on('click', function() {
+        toastr.info('info');
+    });
+
+    $('#btn-success').on('click', function() {
+        toastr.success('success');
+    });
+
+    $('#btn-warning').on('click', function() {
+        toastr.warning('warning');
+    });
+
+    $('#btn-danger').on('click', function() {
+        toastr.error('error');
+    });
+
+    $('#sum-btn').on('click', function() {
+        var a = $('#a').val();
+        var b = $('#b').val();
+        var res = parseInt(a) + parseInt(b);
+        $('#sum').text(res);
+    });
+
+    $('#animate-btn').on('click', function() {
+        //$("#mustang").hide('explode', { "pieces":25 }, 600);
+        $("#mustang").animate({
+            left: "700px"
+        }, {
+            duration: 1700,
+            easing: 'easeInQuad'}
+        );
+
+        $("#camaro").animate({
+            left: "700px"
+        }, {duration: 1900, easing: 'easeInCubic'});
+    });
+
+    $('#reset-btn').on('click', function() {
+        $("#mustang").animate({
+            left: "0"
+        }, 400);
+
+        $("#camaro").animate({
+            left: "0"
+        }, 400);
+    });
+
+    $('#alert-link').on('click', function(e) {
+        e.preventDefault();
+        alert('AntiPattern! -> Poor user experience!')
+    });
+
+    var $searchField = $('#search-field');
+
+    // timer for performing instant search
+    var typingTimer;
+    var doneTypingInterval = 300; // timeout for new in-page search
+
+    //on keyup, start the countdown
+    $searchField.keyup(function() {
+        clearTimeout(typingTimer);
+        typingTimer = setTimeout(inPageSearch, doneTypingInterval);
+    });
+
+    //on keydown, clear the countdown
+    $searchField.keydown(function() {
+        clearTimeout(typingTimer);
+    });
+
+    $('.bootstrap-tiles').find('div[class^="col-xs-"]').each(function() {
+        $(this).attr('title', $(this).attr('class')).tooltip({
+            track: true
+        });
+    });
+
+    function addHidingClass($div) {
+        if (!$div.hasClass('hiding-class')) {
+            $div.addClass('hiding-class');
+        }
+    }
+
+    function removeHidingClass($div) {
+        $div.removeClass('hiding-class');
+    }
+
+    function inPageSearch() {
+        var searchQuery = $searchField.val().trim().toLowerCase();
+
+        $('.person').each(function() {
+            var testQuery = $(this).text().trim().toLowerCase();
+            if (testQuery.match(searchQuery) == null) {
+                addHidingClass($(this));
+            }
+            else {
+                removeHidingClass($(this));
+            }
+        });
+    }
+
+    // regular images
+    Dropzone.options.myAwesomeDropzone = {
+        acceptedFiles: 'image/*',
+        maxFilesize: 20,
+        maxFiles: 1000,
+        parallelUploads: 100,
+        url: '/upload'
+    };
+
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        slideNumber: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [
+            { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+            { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+            { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+            { src: 'plugin/zoom-js/zoom.js', async: true },
+            { src: 'plugin/notes/notes.js', async: true }
+        ]
+    });
+
+    $('#ajax-example-btn').on('click', function() {
+        var detective = { name: 'Sherlock Holmes' }; // a javascript object
+
+        $.ajax({
+          type: 'POST',                            // http method
+          url: '/api/addDetective/',               // target URL
+          data: detective,                         // data (the js obj)
+          success: function(serverResp) {                 // on ajax success
+              if (serverResp.code == '200') {
+                  console.log('detective added successfully!');
+              }
+              else {
+                  console.log('detective already exists!');
+              }
+          },
+          error: function(serverResp) {                   // on ajax failure
+              console.log('5xx http status code or unexpected response content');
+          }
+        });
+    });
+
+    $('.agenda').each(function(i) {
+        console.log(i+1);
+        console.log($(this).find('ol li:nth-child(' + (i + 1) + ')'));
+        $(this).find('ol li:nth-child(' + (i + 1) + ')').css('color', 'cornflowerblue');
+    });
+</script>
+
+</body>
+</html>

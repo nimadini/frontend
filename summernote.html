@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <div class="summernote"></div>
+</body>
+
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/summernote.min.js"></script>
+<link rel="stylesheet" href="css/summernote.css">
+<script type="text/javascript">
+    $('.summernote').summernote({
+        // airMode: true
+        height: 220,
+        tabsize: 2,     // size of tab
+        toolbar: [
+            //[groupname, [button list]]
+            ['headings', ['style']],
+            ['style', ['bold', 'italic', //'underline',
+                'clear']],
+            // ['font', ['strikethrough', 'superscript', 'subscript']],
+            ['fonts', ['fontname', 'fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['insert', ['link', 'picture']],
+            // ['misc', ['codeview']]
+            ['table', ['table']],
+            ['codeview', ['codeview']]
+        ]
+    });
+</script>
+</html>
