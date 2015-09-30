@@ -669,7 +669,7 @@ function inPageSearch() {
       type: 'POST',                            // http method
       url: '/api/addDetective/',               // target URL
       data: detective,                         // data (the js obj)
-      success: function(serverResp) {                 // on ajax success
+      success: function(serverResp) {          // on ajax success
           if (serverResp.code == '200') {
               console.log('detective added successfully!');
           }
@@ -677,7 +677,7 @@ function inPageSearch() {
               console.log('detective already exists!');
           }
       },
-      error: function(serverResp) {                   // on ajax failure
+      error: function(serverResp) {            // on ajax failure
           console.log('5xx http status code or unexpected response content');
       }
   });</code></pre>
