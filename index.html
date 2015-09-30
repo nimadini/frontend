@@ -823,6 +823,7 @@ function inPageSearch() {
             </div>
         </section>
 
+        <!--
         <section data-transition="slide" data-background="#EB9100">
             <h2><a href="http://packery.metafizzy.co/" target="_blank" style="color: white;">Packery</a></h2>
             <div id="container" class="row">
@@ -852,6 +853,7 @@ function inPageSearch() {
                 </div>
             </div>
         </section>
+        -->
 
         <section data-transition="slide" data-background="#F5DEB3">
                 <h2>
@@ -1064,7 +1066,7 @@ var user = ich.foo(obj); // 'foo' must be the same as script's id
 <script src="js/jquery.min.js"></script>
 <script src="js/lightbox.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/packery.pkgd.min.js"></script>
+<!--<script src="js/packery.pkgd.min.js"></script>-->
 <script src="js/draggabilly.pkgd.js"></script>
 <script src="js/imagesloaded.pkgd.min.js"></script>
 <script src="js/toastr.js"></script>
@@ -1074,8 +1076,8 @@ var user = ich.foo(obj); // 'foo' must be the same as script's id
 <script src="js/dropzone.min.js"></script>
 
 <script type="text/javascript">
-    var $container = $('#container');
-    $container.imagesLoaded(function() {
+    //var $container = $('#container');
+    /*$container.imagesLoaded(function() {
         $container.packery({
             gutter: 10,
             columnWidth: '.img_item',
@@ -1086,7 +1088,7 @@ var user = ich.foo(obj); // 'foo' must be the same as script's id
             var draggie = new Draggabilly( itemElem );
             $container.packery('bindDraggabillyEvents', draggie);
         });
-    });
+    });*/
 
     toastr.options = {
         "closeButton": false,
